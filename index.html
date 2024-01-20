@@ -22,9 +22,11 @@
     const canvas = document.getElementById('fireworksCanvas');
     const ctx = canvas.getContext('2d');
 
-    // 设置画布大小
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    // 调整画布的像素密度
+    const devicePixelRatio = window.devicePixelRatio || 1;
+    canvas.width = window.innerWidth * devicePixelRatio;
+    canvas.height = window.innerHeight * devicePixelRatio;
+    ctx.scale(devicePixelRatio, devicePixelRatio);
 
     // 存储烟花数组
     const fireworks = [];
